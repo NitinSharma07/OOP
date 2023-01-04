@@ -24,14 +24,14 @@ class Item:
 item1 = Item("Phone",100, 1)
 item2 = Item("Laptop",1000, 3)
 item1 = Item("Cable",10, 5)
-item1 = Item("Phone",50, 5)
-item1 = Item("Phone",75, 5)
-item1 = Item("Phone",100, 1)
+item1 = Item("Mouse",50, 5)
+item1 = Item("Keyboard",75, 5)
 item1.apply_discount()
 print(item1.price)
 
 
-print(Item.all)
+for instance in Item.all:
+    print(instance.name)
 
 
 
