@@ -26,6 +26,7 @@ item1 = Item("Phone",100, 1)
 item1.apply_discount()
 print(item1.price)
 
+
 item2.pay_rate = 0.7         #changed something out of the class named as Item
 item2.apply_discount()
 print(item2.price)
