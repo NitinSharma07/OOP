@@ -1,5 +1,6 @@
 class Item:
     pay_rate = 0.8 #The pay rate after 20% discount      # This is the class attribute
+    all = []
     def __init__(self,name:str, price:float, quantity=0) :
         
         assert price >= 0, f"Price {price} is not greater than or equal to zero, but lesss than zero."   #by assert we are providing the specifications or the conditions that should be applied to the method inputs
@@ -9,6 +10,9 @@ class Item:
         self.name = name        #These are the method attributes
         self.price = price
         self.quantity = quantity
+
+        #Actions to execute
+        Item.all.append(self)
         
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -27,13 +31,7 @@ item1.apply_discount()
 print(item1.price)
 
 
-item2.pay_rate = 0.7         #changed something out of the class named as Item
-item2.apply_discount()
-print(item2.price)
-
-# print(item1.calculate_total_price())
-# print(Item.__dict__)
-# print(item2.__dict__)
+print(Item.all)
 
 
 
