@@ -16,9 +16,18 @@ class Item:
         # Actions to execute
         Item.all.append(self)
 
-    @property
+    @property        #by using this property we change the attribute property to read only  this decorator is a getter.
     def name(self):
+        print("You are trying yo get the name.")
         return self.__name
+
+    @name.setter   #this is a setter
+    def name(self, value):
+        if len(value) > 10:
+            raise Exception("The name is too long.")
+        else:
+            print("You are trying to set the value.")
+            self.__name = value
 
     def calculate_total_price(self):
         return self.price * self.quantity
