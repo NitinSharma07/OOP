@@ -63,7 +63,23 @@ class Item:
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
 
-    
+    def __connect(self, smtp_server):      #This is abstraction
+        pass 
+
+    def __prepare_body(self):     #This is abstraction, by adding double underscore before the name of the method and secreting it, from users.
+        return f"""
+        Hello Someone.
+        We have {self.name} {self.quantity} times.
+        Regards, Nitin Sharma
+        """
+
+    def __send(self):           #This is abstraction
+        pass
+
+    def send_email(self):
+        self.__connect()
+        self.__prepare_body()
+        self.__send()
 
 
 

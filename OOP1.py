@@ -9,6 +9,11 @@ item1 = Item('MyItem', 750)
 item1.name = "OtherItem"
 print(item1.name)
 
+# item1.send_email()
+
+
+
+
 
 
 
