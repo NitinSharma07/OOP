@@ -28,7 +28,22 @@ class Item:
             items = list(reader)
 
         for item in items:
-            print(item)
+            Item(
+                name = item.get('name'),
+                price = float(item.get('price')),
+                quantity = float(item.get('quantity')),
+            )
+    
+    @staticmethod      
+    def is_integer(num):
+        # We will count out the floats that are point zero
+        # For i.e.: 5.0, 10.0
+        if isinstance(num, float):
+            return num.is_integer
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
 
 
     def __repr__(self):
@@ -37,4 +52,8 @@ class Item:
 
 
 # print(Item.all)  # without using __repr__ it is going to return  [Item, Item, Item, Item, Item] <- This list.
-Item.instantiate_from_csv()
+# Item.instantiate_from_csv()
+# print(Item.all)    # here it is by reading through the files
+
+print(Item.is_integer(7))
+
